@@ -45,7 +45,6 @@ export async function POST(request: Request) {
     const botMessage = response?.choices[0]?.message?.content?.trim();
     return NextResponse.json({ message: botMessage });
   } catch (error) {
-    // console.error('Error fetching ChatGPT response:', error);
     return NextResponse.json(
       { error: "Error fetching ChatGPT response" },
       { status: 500 }

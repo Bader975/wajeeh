@@ -1,27 +1,13 @@
 "use client";
 import Chat from "@/components/Chat";
+// import { Microphone } from "@/components/Microphone";
 import { prismaDb } from "@/db";
 import Image from "next/image";
 
-export default  function Home() {
-  // const users = await prismaDb.user.findMany({});
- 
-
-  async function chatGpt() {
-   
-  
-}
+export default function Home() {
   return (
-    <main className="flex">
-      {/* {users.map((user) => (
-        <div key={user.id}>
-          <p>{user.name}</p>
-          <p>{user.email}</p>
-        </div>
-      ))} */}
-
-<Chat/>
-
+    <main className="flex justify-center bg-slate-400 min-h-screen">
+      <Chat />
     </main>
   );
 }

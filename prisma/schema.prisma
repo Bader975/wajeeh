@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -14,15 +8,136 @@ datasource db {
 }
 
 model User {
-  id      Int      @id @default(autoincrement())
-  email   String   @unique
-  name    String?
-  profile Profile?
+  userID           Int              @id @default(autoincrement())
+  userName         String
+  email            String           @unique
+  password         String
+  verificationCode String?
+  userType         UserType
+  major            String?
+  specializations  Specialization[]
+  taskResults      TaskResult[]
+  quizResults      QuizResult[]
+  interviews       Interview[]
+  certificates     Certificate[]
 }
 
-model Profile {
-  id     Int    @id @default(autoincrement())
-  bio    String
-  user   User   @relation(fields: [userId], references: [id])
-  userId Int    @unique
+model Specialization {
+  specializationID   Int        @id @default(autoincrement())
+  specializationName String
+  jobTitles          JobTitle[]
+  User               User?      @relation(fields: [userUserID], references: [userID])
+  userUserID         Int?
+}
+
+model JobTitle {
+  jobTitleID       Int            @id @default(autoincrement())
+  jobTitleName     String
+  specialization   Specialization @relation(fields: [specializationID], references: [specializationID])
+  specializationID Int
+  courses          Course[]
+}
+
+model Course {
+  courseID          Int           @id @default(autoincrement())
+  courseName        String
+  courseDescription String?
+  jobTitle          JobTitle      @relation(fields: [jobTitleID], references: [jobTitleID])
+  jobTitleID        Int
+  tutorials         Tutorial[]
+  tasks             Task[]
+  quizzes           Quiz[]
+  interviews        Interview[]
+  certificates      Certificate[]
+}
+
+model Tutorial {
+  tutorialID   Int    @id @default(autoincrement())
+  tutorialName String
+  tutorialURL  String
+  course       Course @relation(fields: [courseID], references: [courseID])
+  courseID     Int
+}
+
+model Task {
+  taskID          Int          @id @default(autoincrement())
+  taskDescription String
+  course          Course       @relation(fields: [courseID], references: [courseID])
+  courseID        Int
+  taskResults     TaskResult[]
+}
+
+model TaskResult {
+  resultID        Int           @id @default(autoincrement())
+  user            User          @relation(fields: [userID], references: [userID])
+  userID          Int
+  task            Task          @relation(fields: [taskID], references: [taskID])
+  taskID          Int
+  grade           Grade
+  weaknesses      String?
+  improvementTips String?
+  attemptStatus   AttemptStatus
+}
+
+model Quiz {
+  quizID          Int          @id @default(autoincrement())
+  quizName        String
+  quizDescription String?
+  course          Course       @relation(fields: [courseID], references: [courseID])
+  courseID        Int
+  quizResults     QuizResult[]
+}
+
+model QuizResult {
+  resultID Int   @id @default(autoincrement())
+  user     User  @relation(fields: [userID], references: [userID])
+  userID   Int
+  quiz     Quiz  @relation(fields: [quizID], references: [quizID])
+  quizID   Int
+  score    Float
+}
+
+model Interview {
+  interviewID     Int             @id @default(autoincrement())
+  user            User            @relation(fields: [userID], references: [userID])
+  userID          Int
+  course          Course          @relation(fields: [courseID], references: [courseID])
+  courseID        Int
+  evaluatorName   String
+  interviewResult InterviewResult
+  improvementTips String?
+}
+
+model Certificate {
+  certificateID  Int      @id @default(autoincrement())
+  user           User     @relation(fields: [userID], references: [userID])
+  userID         Int
+  courseName     String
+  issueDate      DateTime
+  Course         Course?  @relation(fields: [courseCourseID], references: [courseID])
+  courseCourseID Int?
+}
+
+enum UserType {
+  STUDENT
+  TEACHER
+  ADMIN
+}
+
+enum Grade {
+  A
+  B
+  C
+  D
+  F
+}
+
+enum AttemptStatus {
+  PASSED
+  FAILED
+}
+
+enum InterviewResult {
+  SUCCESS
+  FAILURE
 }
