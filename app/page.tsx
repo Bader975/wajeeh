@@ -1,13 +1,22 @@
-"use client";
 import Chat from "@/components/Chat";
-// import { Microphone } from "@/components/Microphone";
+import Banner from "@/components/home/banner/banner";
+import TwoIpads from "@/components/home/two-ipads/two-ipads";
+import PhonesSection from "@/components/home/two-phones/phones-section";
+import UiServices from "@/components/home/ui-services/ui-services";
+import WhyWajeeh from "@/components/home/why-wajeeh/why-wajeeh";
+
 import { prismaDb } from "@/db";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex justify-center bg-slate-400 min-h-screen">
-      <Chat />
+    <main className="flex flex-col justify-center min-h-screen">
+      <Banner/>
+      <PhonesSection/>
+      <UiServices/>
+      <WhyWajeeh/>
+      <TwoIpads/>
+      {/* <Chat /> */}
     </main>
   );
 }

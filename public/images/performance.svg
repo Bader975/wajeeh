@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="241.854" height="241.854" viewBox="0 0 241.854 241.854">
+  <defs>
+    <filter id="شريط_سفلي" x="0" y="0" width="241.854" height="241.854" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.09"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#2a9c89"/>
+      <stop offset="0.55" stop-color="#60ae65"/>
+      <stop offset="1" stop-color="#7fc042"/>
+    </linearGradient>
+  </defs>
+  <g id="Component_385_1" data-name="Component 385 – 1" transform="translate(9 6)">
+    <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#شريط_سفلي)">
+      <g id="شريط_سفلي-2" data-name="شريط سفلي" transform="translate(9 6)" fill="#fff" stroke="rgba(219,219,219,0.69)" stroke-width="0.8">
+        <rect width="223.854" height="223.854" rx="29" stroke="none"/>
+        <rect x="0.4" y="0.4" width="223.054" height="223.054" rx="28.6" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_28237" data-name="Group 28237" transform="translate(59.871 45.841)">
+      <rect id="Rectangle_20911" data-name="Rectangle 20911" width="14.35" height="48.076" rx="7" transform="translate(29.971 36.053)" fill="#00ac9d"/>
+      <rect id="Rectangle_20912" data-name="Rectangle 20912" width="14.354" height="84.129" rx="7" transform="translate(0 0)" fill="#151327"/>
+      <rect id="Rectangle_20913" data-name="Rectangle 20913" width="14.354" height="83.718" rx="7" transform="translate(59.938 0.411)" fill="url(#linear-gradient)"/>
+      <rect id="Rectangle_20914" data-name="Rectangle 20914" width="14.354" height="56.223" rx="7" transform="translate(89.905 27.906)" fill="#00ac9d"/>
+    </g>
+  </g>
+</svg>

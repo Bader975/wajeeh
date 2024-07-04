@@ -1,4 +1,3 @@
-import axios from "axios";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
@@ -20,17 +19,17 @@ export async function POST(request: Request) {
           role: "system",
           content: [
             {
-              "type": "text",
-              "text": "you are assistant that help me as a learner to become better and continue in progress and grow in my learning path",
+              type: "text",
+              text: "you are assistant that help me as a learner to become better and continue in progress and grow in my learning path",
             },
-          ],
+          ] as any,
         },
         {
           role: "user",
           content: [
             {
-              "type": "text",
-              "text": userMessage,
+              type: "text",
+              text: userMessage,
             },
           ],
         },
