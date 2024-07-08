@@ -40,14 +40,15 @@ export default function PhonesSection() {
           </div>
 
            <Image
+            className="w-[380px] h-[380px] md:h-[550px] md:w-[580px]"
             src={"/images/two-phones.png"}
             alt="old style suadi"
             width={580}
             height={580}
             style={{
-                marginTop:"10xp",
+                marginTop:"10px",
               objectFit: "contain",
-            //    transform:"translateY(-10.1rem)",
+               transform:"translateY(-10.1rem)",
                width:"100%"
             }}
           /> 
@@ -60,6 +61,7 @@ export default function PhonesSection() {
           alt="old style suadi"
           width={107}
           height={107}
+          className="w-[50px] md:w-[107px]"
           style={{
             objectFit: "contain",
             position: "absolute",
@@ -75,6 +77,7 @@ export default function PhonesSection() {
           style={{
             objectFit: "contain",
             width: "100%",
+            height: "auto",
             position: "relative",
             zIndex: -1,
           }}

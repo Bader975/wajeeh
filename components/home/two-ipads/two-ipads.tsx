@@ -6,14 +6,15 @@ export default function TwoIpads() {
       style={{
         marginBlock: "120px",
         background:
-          "transparent url(/images/vr-bg.png) 0% 0% no-repeat padding-box;",
-        backgroundSize: "cover",
+          "transparent url(/images/vr-bg.png) 0% 0% no-repeat padding-box",
+        backgroundSize: "contain",
         width: "100%",
         height: "1200px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        objectFit: "cover",
       }}
     >
       <Image
@@ -21,6 +22,7 @@ export default function TwoIpads() {
         alt="two-ipads"
         width={600}
         height={700}
+        className="w-[400px] md:w-[600px]"
         style={{
           objectFit: "cover",
           position: "relative",
@@ -28,7 +30,7 @@ export default function TwoIpads() {
         }}
       />
 
-      <h2 className="text-center font-bold text-4xl leading-[4.5rem] text-white w-[340px]">
+      <h2 className="text-center font-bold text-lg md:text-4xl leading-[4.5rem] text-white w-[340px]">
         لوحة تحكم تخصصية مدعومة محدثة بتقنيــات الذكاء الصناعي والتحليل
       </h2>
     </section>

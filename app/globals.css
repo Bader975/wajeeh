@@ -9,20 +9,26 @@
 }
 
 .chat-container {
+  /* background: transparent url("/images/chat-main-bg.svg") 0% 0% no-repeat; */
+  background-size: 100%;
+  width: 100%;
+  height: 1188px;
+  object-fit: cover;
   display: flex;
   flex-direction: column;
-  height: 80vh;
-  max-width: 600px;
-    margin: auto;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  height: 90vh;
+  min-width:900px;
+  width: 100%;
+  box-shadow: 3px 3px 12px #00000029;
+  border: 1px solid #00AC9D;
   overflow: hidden;
-  direction: rtl; /* Add RTL direction */
+  direction: ltr;
+  border-radius: 20px;
 }
 
 .scroll-area {
   flex: 1;
-  background: #f9f9f9;
+  /* background: #f9f9f9; */
   padding: 16px;
 }
 
@@ -40,32 +46,46 @@
 
 .message.user {
   align-self: flex-end;
-  background-color: #e0f7fa;
+  background: #efefefa8 0% 0% no-repeat padding-box;
+  color: #13574f;
+  text-align: right;
 }
 
 .message.assistant {
   align-self: flex-start;
-  background-color: #f1f8e9;
+  background: transparent
+    linear-gradient(
+      92deg,
+      #01454f 0%,
+      #13574f 18%,
+      #35764f 43%,
+      #51914f 61%,
+      #6fad4f 84%,
+      #94cc52 100%
+    )
+    0% 0% no-repeat padding-box;
+  border-radius: 20px;
+  color: #ffffff;
 }
 
 .input-container {
-  display: flex;
-  align-items: center;
-  padding: 16px;
-  background: #fff;
-  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  box-shadow: 0px 8px 6px #00000017;
+  border: 0.800000011920929px solid #C9C9C9;
+  border-radius: 15px;
+  height: 80px;
+  width: 1152px;
+
 }
 
-.input-container .border-2 {
-  flex: 1;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-left: 8px; /* Adjust margin for RTL */
-}
+.input-container input {
+  border-radius: 13px;
+  width: 925px;
+height: 49px;
 
+}
 .input-container button {
-  margin-right: 8px; /* Adjust margin for RTL */
+  margin-right: 8px;
 }
 
 .input-container .w-10 {
@@ -73,22 +93,44 @@
   height: 40px;
 }
 
-
 .microphone-button {
-  border: none;
-  background: transparent;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: background-color 0.3s, transform 0.3s;
-  transform: scale(1.2);
+  width: 80px;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 45px;
+  width: 262px;
+  height: 65px;
+  color: #94cc52;
+  background-color: #13574f;
+  font-weight: bold;
 }
 
 .microphone-button:active {
   background-color: darkgrey;
   color: white;
   transform: scale(0.9);
+}
+
+input[type="checkbox"]:checked + label .w-6 .text-green-500 {
+  display: block;
+}
+
+input[type="checkbox"]:checked + label .w-6 {
+  /* background-color: #e6fffa; */
+  border-color: #52a39d;
+}
+
+input[type="checkbox"]:checked + label .w-6 .text-green-500 {
+  display: block;
+}
+
+input[type="checkbox"]:checked + label .w-6 {
+  border-color: #0f2837;
+}
+
+input[type="checkbox"]:checked + label svg {
+  display: block;
+}
+
+input[type="checkbox"] + label svg {
+  display: none;
 }

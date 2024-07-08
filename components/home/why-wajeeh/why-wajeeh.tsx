@@ -16,6 +16,9 @@ export default function WhyWajeeh() {
               alt={`Image ${index + 1}`}
               width={280}
               height={128}
+              style={{
+                direction:"ltr"
+              }}
             />
           </div>
         ))}

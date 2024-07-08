@@ -1,3 +1,4 @@
+"use client"
 import Chat from "@/components/Chat";
 import Banner from "@/components/home/banner/banner";
 import TwoIpads from "@/components/home/two-ipads/two-ipads";
@@ -8,15 +9,14 @@ import WhyWajeeh from "@/components/home/why-wajeeh/why-wajeeh";
 import { prismaDb } from "@/db";
 import Image from "next/image";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="flex flex-col justify-center min-h-screen">
+    <main className="flex flex-col justify-center min-h-screen min-w-screen">
       <Banner/>
       <PhonesSection/>
       <UiServices/>
       <WhyWajeeh/>
       <TwoIpads/>
-      {/* <Chat /> */}
     </main>
   );
 }

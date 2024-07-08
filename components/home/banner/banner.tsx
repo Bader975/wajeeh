@@ -12,6 +12,7 @@ export default function Banner() {
           alt="wajeeh man"
           width={440}
           height={560}
+          className="w-[220px] md:w-[440px]"
         />
         <h2 className="text-center font-bold  text-xl md:text-4xl  leading-[1.5rem] md:leading-[4.5rem] text-white w-auto md:w-[340px]">
           المساعد الافتراضي الأول في عالم التعليم بالتكامل مع مسارات التعلم

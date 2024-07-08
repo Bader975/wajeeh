@@ -13,8 +13,8 @@ export const servicesData=[
 export const whyWajeeh=[
     "why-1.png",
     "why-2.png",
-    "why-3.svg",
-    "why-4.svg",
+    "why-3.png",
+    "why-4.png",
     "why-5.png",
     // "why-6.png",
 ]

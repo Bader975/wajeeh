@@ -15,10 +15,11 @@ export default function UiServices() {
               alt="wajeeh man"
               width={224}
               height={224}
-              className="object-contain mx-auto"
+              className="mx-auto"
               style={{
                 objectFit: "contain",
                 width: "100%",
+                direction:"rtl"
               }}
             />
             <h2 className="text-[#15264C] text-2xl mt-4 font-bold">

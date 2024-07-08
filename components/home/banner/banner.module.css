@@ -30,6 +30,15 @@ margin-top: 50px;
   transition: transform 0.3s ease; 
 }
 
+@media only screen and (max-width: 600px) {
+
+  .bnt-start-now {
+    width: 100%;
+    max-width: 250px;
+}
+
+}
+
 .bnt-start-now:hover {
   transform: scale(1.2);
 }

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import { Button, TextField } from "@radix-ui/themes";
@@ -53,53 +54,52 @@ const Chat = () => {
   }, [text]);
 
   return (
-    <div className="chat-container shadow-xl">
-      <div className="scroll-area">
-        <div className="messages">
-          {messages.map((msg, index) => (
-            <div
-              key={index}
-              className={`message ${
-                msg.startsWith("المستخدم") ? "user" : "assistant"
-              }`}
-            >
-              {msg}
-            </div>
-          ))}
+    <>
+      <div className="chat-container">
+        <div className="scroll-area">
+          <div className="messages">
+            {messages.map((msg, index) => (
+              <div
+                key={index}
+                className={`message ${
+                  msg.startsWith("المستخدم") ? "user" : "assistant"
+                }`}
+              >
+                {msg}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <div className="input-container">
+      <div className="grid grid-cols-2 p-5 items-center input-container">
         <TextField.Root
           type="text"
           value={input}
-          className="border-2"
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSend()}
           placeholder="اكتب رسالتك هنا"
         />
-        <Button
-          color="cyan"
-          variant="soft"
-          onClick={handleSend}
-          disabled={isSpeaking}
-        >
-          ارسال
-        </Button>
-        <Button
-          color="gray"
-          variant="soft"
-          highContrast
-          onMouseDown={startRecording}
-          onMouseUp={stopRecording}
-          onTouchStart={startRecording}
-          onTouchEnd={stopRecording}
-          className="border-none bg-transparent w-10 microphone-button"
-
-        >
-          <FaMicrophone />
-        </Button>
+        <div>
+          <button
+            className="bg-[#6FAD4F] text-white w-[150px] h-[50px] rounded-2xl"
+            onClick={handleSend}
+            disabled={isSpeaking}
+          >
+            ارسال
+          </button>
+          <button
+            onMouseDown={startRecording}
+            onMouseUp={stopRecording}
+            onTouchStart={startRecording}
+            onTouchEnd={stopRecording}
+            className="microphone-button"
+          >
+            تحدث الآن
+            {/* <FaMicrophone /> */}
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

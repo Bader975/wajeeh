@@ -43,7 +43,7 @@ export default function navBar() {
 </li>
 
 <li className={classes["nav-link"]}>
-  <Link href={'/'} >
+  <Link href={'/login'} >
   الدخول
    </Link>
 </li>
