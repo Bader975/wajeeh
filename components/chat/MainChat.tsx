@@ -10,6 +10,8 @@ import ChallengesChat from "./challenges-chat";
 import AdviserChat from "./Adviser-chat";
 import ProgressIndicator from "./ProgressIndicator";
 import GuideMe from "./guideMe";
+import CvChat from "./cv-chat";
+import ChallengeChat from "./challenges-chat";
 
 const Chat = () => {
   const [input, setInput] = useState("");
@@ -61,8 +63,8 @@ const Chat = () => {
 
   return (
     <div className="my-20 max-w-[900px] w-full">
-      <ProgressIndicator/>
-      <TabsRoot as={Tabs.Root} defaultValue="tab1">
+      {/* <ProgressIndicator/> */}
+      <TabsRoot as={Tabs.Root} defaultValue="tab5">
         <TabsList as={Tabs.List} aria-label="Manage your account">
           <TabsTrigger as={Tabs.Trigger} value="tab1">
             وجهني
@@ -83,19 +85,20 @@ const Chat = () => {
 
         <TabsContent as={Tabs.Content} value="tab1">
           {/* <ChatBot /> */}
-          <GuideMe/>
+          <GuideMe />
         </TabsContent>
 
         <TabsContent as={Tabs.Content} value="tab2">
-          <ChallengesChat />
+          <ChallengeChat />
         </TabsContent>
 
         <TabsContent as={Tabs.Content} value="tab3">
-         
+          <CvChat/>
         </TabsContent>
 
         <TabsContent as={Tabs.Content} value="tab4">
-          <HrChat />
+          {/* <HrChat /> */}
+          <ChatBot /> 
         </TabsContent>
 
         <TabsContent as={Tabs.Content} value="tab5">

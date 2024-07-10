@@ -67,6 +67,7 @@ export default function ChatBot() {
                   msg.startsWith("المستخدم") ? "user" : "assistant"
                 }`}
               >
+               
                 <Image
                   className="w-[34px] h-[34px]"
                   src={`/images/${

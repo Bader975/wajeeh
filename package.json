@@ -16,6 +16,7 @@
     "@stitches/react": "^1.2.8",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
+    "framer-motion": "^11.2.14",
     "next": "14.2.4",
     "openai": "^4.52.1",
     "prisma": "^5.15.1",
