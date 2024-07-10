@@ -5,9 +5,10 @@ export default function Footer() {
   return (
     <section>
 
-        <Image src={"/images/footer-bg.png"} alt="footer bg" width={1000} height={601} style={{
+        <Image src={"/images/footer-bg.png"} alt="footer bg" width={1000} height={400} style={{
             width:"100%",
-            height:"100%",
+            // height:"100%",
+            maxHeight:"601px"
         }}/>
     </section>
   );

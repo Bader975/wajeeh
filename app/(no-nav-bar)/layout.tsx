@@ -1,5 +1,5 @@
 import React from "react";
-import "../../globals.css";
+import "../globals.css";
 import "@radix-ui/themes/styles.css";
 
 export const metadata = {
@@ -13,10 +13,8 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-
     <html lang="en" dir="rtl">
       <body>{children}</body>
     </html>
-    
   );
 }

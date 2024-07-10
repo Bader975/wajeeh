@@ -1,36 +1,17 @@
 import React from "react";
 import Image from "next/image";
+
 export default function TwoIpads() {
   return (
-    <section
-      style={{
-        marginBlock: "120px",
-        background:
-          "transparent url(/images/vr-bg.png) 0% 0% no-repeat padding-box",
-        backgroundSize: "contain",
-        width: "100%",
-        height: "1200px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        objectFit: "cover",
-      }}
-    >
+    <section className="relative flex flex-col items-center justify-center bg-[url('/images/vr-bg.png')] bg-no-repeat bg-cover h-[1200px] my-30 md:my-20 sm:my-10 w-full">
       <Image
         src={"/images/two-ipads.png"}
         alt="two-ipads"
         width={600}
         height={700}
-        className="w-[400px] md:w-[600px]"
-        style={{
-          objectFit: "cover",
-          position: "relative",
-          zIndex: 1,
-        }}
+        className="w-full max-w-[600px] object-cover relative z-10"
       />
-
-      <h2 className="text-center font-bold text-lg md:text-4xl leading-[4.5rem] text-white w-[340px]">
+      <h2 className="text-center font-bold text-lg md:text-4xl leading-snug text-white w-full max-w-[340px] mt-4">
         لوحة تحكم تخصصية مدعومة محدثة بتقنيــات الذكاء الصناعي والتحليل
       </h2>
     </section>
