@@ -3,9 +3,9 @@
 import Image from "next/image";
 import React from "react";
 import { useRouter } from 'next/navigation'
-
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { AiOutlineCheck } from "react-icons/ai";
+import Link from "next/link";
 export default function Login() {
   const router = useRouter()
 
@@ -116,7 +116,7 @@ export default function Login() {
                   </a>
                 </div>
               </div>
-
+<Link href={"/dashboard"}>
               <button
                 type="submit"
                 className="w-full py-2 bg-green-600 font-bold text-white rounded-2xl hover:bg-green-700 transition duration-200"
@@ -124,11 +124,11 @@ export default function Login() {
                   background:
                     "linear-gradient(to right, #01454F, #13574F, #35764F,#51914F,#6FAD4F,#94CC52)",
                 }}
-                onClick={()=>router.push("/dashboard")}
+                
               >
                 الدخول
               </button>
-
+</Link>
               <button
                 type="button"
                 className="w-full py-2 mt-4 font-bold bg-[#EEEEEE] text-[#0F2837] rounded-2xl hover:bg-gray-300 transition duration-200"
