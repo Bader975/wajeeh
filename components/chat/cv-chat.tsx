@@ -19,7 +19,10 @@ export default function CvChat() {
     };
 
     const handlePreview = () => {
-        setShowPreview(true);
+        setTimeout(()=>{
+            setShowPreview(true);
+        },2000)
+       
     };
 
     return (
@@ -32,6 +35,7 @@ export default function CvChat() {
                 className="self-start"
             />
             <div className="flex gap-4">
+                {showPreview &&<p> جاري سحب البيانات باستخدم الذكاء الاصناعي</p>}
               {!showPreview &&
                  <button
                  className="hover:bg-[#5c568c]"
