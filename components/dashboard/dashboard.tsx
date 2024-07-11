@@ -1,8 +1,13 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import { FaHome } from "react-icons/fa";
 import Courses from "./courses";
+import { useRouter } from 'next/navigation'
+
 export default function Dashboard() {
+  const router = useRouter()
+
   return (
     <div className="grid grid-cols-1  md:grid-cols-4 my-28">
       <div className="flex flex-col items-center md:items-start gap-8 mb-4 px-2 text-center">
@@ -37,7 +42,7 @@ export default function Dashboard() {
           />
 
           <div
-            className="flex flex-col hover:shadow-xl transition-shadow duration-300"
+            className="flex flex-col justify-around hover:shadow-xl transition-shadow duration-300"
             style={{
               border: "1px solid #DFEAF2",
               borderRadius: "25px",
@@ -74,6 +79,7 @@ export default function Dashboard() {
                 height: "70px",
                 color: "white",
               }}
+              onClick={()=>router.push('/chat')}
             >
               أبـــــــدأ الآن
             </button>

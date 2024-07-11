@@ -6,7 +6,7 @@ export default function navBar() {
   return (
     <>
       <nav className={classes["nav-bar"]}>
-        <ul className="flex justify-center md:justify-between py-3 lg:px-10 content-center items-center pt-2 flex-wrap gap-8">
+        <ul className="flex justify-center md:justify-between py-3 px-10 md:px-20 mx-8 md:mx-14 content-center items-center pt-2 flex-wrap gap-10">
           <Image
             src="/images/wajeeh-logo.svg"
             alt="main logo"
