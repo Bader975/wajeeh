@@ -1,8 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { useRouter } from 'next/navigation'
+
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { AiOutlineCheck } from "react-icons/ai";
 export default function Login() {
+  const router = useRouter()
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 w-[100wv]">
       <div className="flex-col items-center justify-center w-full block mt-28">
@@ -118,6 +124,7 @@ export default function Login() {
                   background:
                     "linear-gradient(to right, #01454F, #13574F, #35764F,#51914F,#6FAD4F,#94CC52)",
                 }}
+                onClick={()=>router.push("/dashboard")}
               >
                 الدخول
               </button>
