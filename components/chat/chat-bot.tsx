@@ -51,7 +51,7 @@ export default function ChatBot() {
   }, [text]);
 
   useEffect(() => {
-    const initialBotMessage = "ماذا الذي أقدر أساعدك فيه؟";
+    const initialBotMessage = " انا وجيه وسنجري مقابلة شخصية HR";
     setMessages([`المساعد الافتراضي: ${initialBotMessage}`]);
   }, []);
 
@@ -62,6 +62,7 @@ export default function ChatBot() {
           <div className="messages">
             {messages.map((msg, index) => (
               <div
+              style={{ direction: 'rtl', textAlign: 'right' }}
                 key={index}
                 className={`flex message ${
                   msg.startsWith("المستخدم") ? "user" : "assistant"
@@ -89,7 +90,7 @@ export default function ChatBot() {
           </div>
         </div>
       </div>
-      <div className="grid input-container w-[550px]">
+      <div className="grid input-container max-w-[550px]">
         <input
           type="text"
           className="p-2 text-right placeholder-gray-400"

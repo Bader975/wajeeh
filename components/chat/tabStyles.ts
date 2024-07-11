@@ -30,8 +30,9 @@ export const TabsRoot = styled("div", {
 
 export const TabsList = styled("div", {
   display: "flex",
-  justifyContent: "space-between",
+  justifyContent: "space-evenly",
   alignItems: "center",
+  // alignContent:"center",
   flexWrap:"wrap",
   direction: "rtl",
   fontFamily: "bold",

@@ -4,9 +4,9 @@ import { FaHome } from "react-icons/fa";
 import Courses from "./courses";
 export default function Dashboard() {
   return (
-    <div className="grid grid-cols-4  my-28">
-      <div className="flex flex-col items-start gap-8 mb-4 px-2 text-center">
-        <FaHome className="text-black mb-8" size={24} />
+    <div className="grid grid-cols-1  md:grid-cols-4 my-28">
+      <div className="flex flex-col items-center md:items-start gap-8 mb-4 px-2 text-center">
+      <FaHome className="text-black mb-8" size={24} />
         <button className="bg-gray-200 text-center py-2 rounded-md w-[130px] h-[38px] hover:shadow-xl transition-shadow duration-300">
           الرئيسية
         </button>
@@ -27,8 +27,8 @@ export default function Dashboard() {
         </button>
       </div>
 
-      <div className="col-span-3 space-y-8">
-        <div className="flex justify-center gap-8">
+      <div className="md:col-span-3 space-y-8 mt-3">
+        <div className="flex justify-center gap-8 flex-wrap">
           <Image
             src={"/images/dash/hello-wajeh.png"}
             alt="two-ipads"
@@ -137,8 +137,8 @@ export default function Dashboard() {
             />
           </div>
         </div>
-        <div className="flex justify-end items-center h-[250px]">
-          <div className="flex flex-col items-start mx-auto">
+        <div className="flex justify-end items-center main-h-[250px] flex-wrap">
+          <div className="flex flex-col items-start mx-auto flex-wrap">
             <h1 className="text-right font-bold text-xl">الدورات</h1>
             <Courses />
           </div>

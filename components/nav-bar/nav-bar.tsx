@@ -6,7 +6,7 @@ export default function navBar() {
   return (
     <>
       <nav className={classes["nav-bar"]}>
-        <ul className="flex justify-center md:justify-between py-3 px-3 content-center items-center pt-2 flex-wrap gap-6">
+        <ul className="flex justify-center md:justify-between py-3 lg:px-10 content-center items-center pt-2 flex-wrap gap-8">
           <Image
             src="/images/wajeeh-logo.svg"
             alt="main logo"
@@ -19,11 +19,11 @@ export default function navBar() {
           </li>
 
           <li className={classes["nav-link"]}>
-            <Link href={"/"}>عن وجيه</Link>
+            <Link href={"/#about"}>عن وجيه</Link>
           </li>
 
           <li className={classes["nav-link"]}>
-            <Link href={"/"}>مزايا وجيه</Link>
+            <Link href={"/#ui-services"}>مزايا وجيه</Link>
           </li>
 
           <li className={classes["nav-link"]}>

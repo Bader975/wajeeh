@@ -10,7 +10,7 @@ export default function Courses() {
   ];
 
   return (
-    <div className="flex flex-wrap justify-evenly">
+    <div className="flex flex-wrap justify-evenly overflow-auto">
       {imagesUrl.map((imgurl: string) => (
         <Image
           key={imgurl}

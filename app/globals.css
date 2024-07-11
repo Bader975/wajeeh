@@ -7,6 +7,11 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "ExpoArabic";
   src: url("/fonts/ExpoArabic-Book.ttf") format("truetype");
@@ -61,8 +66,8 @@
 
 .message.user {
   flex: 1;
-  justify-content: start;
-  flex-direction: row;
+  justify-content: end;
+  flex-direction: row-reverse;
   .text {
     background: #efefefa8 0% 0% no-repeat padding-box;
     color: #13574f;
@@ -72,8 +77,8 @@
 }
 
 .message.assistant {
-  flex-direction: row-reverse;
-  align-self: flex-end;
+  flex-direction: row;
+  /* align-self: flex-end; */
   .text {
     background: transparent
       linear-gradient(

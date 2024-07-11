@@ -32,21 +32,27 @@ export default function CvChat() {
                 className="self-start"
             />
             <div className="flex gap-4">
-                <button
-                    className="hover:bg-[#5c568c]"
-                    style={{
-                        color: "#F3F3F3",
-                        width: "168px",
-                        height: "38px",
-                        background: "#151327 0% 0% no-repeat padding-box",
-                        border: "1px solid #707070",
-                        borderRadius: "50px",
-                    }}
-                    onClick={handlePreview}
-                >
-                           أنشئ سيرتك الذاتية
+              {!showPreview &&
+                 <button
+                 className="hover:bg-[#5c568c]"
+                 style={{
+                     color: "#F3F3F3",
+                     width: "168px",
+                     height: "38px",
+                     background: "#151327 0% 0% no-repeat padding-box",
+                     border: "1px solid #707070",
+                     borderRadius: "50px",
+                 }}
+                 onClick={handlePreview}
+             >
+                        أنشئ سيرتك الذاتية
+             </button>
+              }
+               
+                {showPreview &&(
 
-                </button>
+              
+
                 <button
                     className="hover:bg-[#5c568c]"
                     style={{
@@ -62,6 +68,7 @@ export default function CvChat() {
                            حمل سيرتك الذاتية
 
                 </button>
+                  )}
             </div>
 
             {showPreview && (

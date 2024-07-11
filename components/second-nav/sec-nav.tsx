@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { TextField } from "@radix-ui/themes";
 import { FaMagnifyingGlass } from "react-icons/fa6";
-
+import Link from "next/link";
 export default function SecondNav() {
   return (
     <div
@@ -34,6 +34,8 @@ export default function SecondNav() {
               height: "40px",
               borderRadius: "20px",
               background: "white",
+              position: "relative",
+              zIndex:10,
             }}
           >
             <TextField.Slot>
@@ -41,6 +43,7 @@ export default function SecondNav() {
             </TextField.Slot>
           </TextField.Root>
         </div>
+        <Link href={"/"}>
         <div className="flex justify-center gap-8">
           <Image
             src="/images/wajeeh-logo.svg"
@@ -48,6 +51,7 @@ export default function SecondNav() {
             width="80"
             height="80"
           />
+           
           <Image
             src="/images/king-khalid-uni.svg"
             alt=""
@@ -55,6 +59,7 @@ export default function SecondNav() {
             height="80"
           />
         </div>
+          </Link>
       </div>
     </div>
   );
