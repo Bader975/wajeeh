@@ -21,16 +21,23 @@
 .chat-container {
   /* background: transparent url("/images/chat-main-bg.svg") 0% 0% no-repeat;
   background-size: 100%; */
-  min-height: 488px;
+  height:   488px;
   max-height: 600px;
   display: flex;
   width: 100%;
-  width: 900px;
+  width: 900px;   
   box-shadow: 3px 3px 12px #00000029;
   border: 1px solid #00ac9d;
   overflow: hidden;
   direction: ltr;
   border-radius: 20px;
+
+}
+
+@media (max-width: 768px) {
+  .chat-container {
+    width: 100%;
+  }
 }
 
 .scroll-area {

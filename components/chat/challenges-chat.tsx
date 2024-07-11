@@ -3,7 +3,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 
 const challenges = [
   {
-    question: "كيف استلام مشروع برمجي في فريق العمل:",
+    question: ":كيف استلام مشروع برمجي في فريق العمل",
     options: [
       "تأكد من أنك فهمت متطلبات المشروع بشكل وافٍ، وتحقق من الجدول الزمني والموارد المتاحة، وابدأ في تنفيذ المهام وفقًا لتوجيهات الفريق.",
       "ابدأ في تنفيذ المهام فورًا دون مراجعة المتطلبات.",
@@ -11,7 +11,7 @@ const challenges = [
     correctIndex: 0,
   },
   {
-    question: "كيف اقوم بالتواصل مع مدير أو قائد فريق التطوير:",
+    question: ":كيف اقوم بالتواصل مع مدير أو قائد فريق التطوير",
     options: [
       "استخدم وسائل الاتصال المعتادة مثل البريد الإلكتروني أو تطبيقات الرسائل الفورية، و كن واضحًا في طلباتك أو استفساراتك.",
       "اتصل به بشكل عشوائي في أي وقت.",
@@ -19,7 +19,7 @@ const challenges = [
     correctIndex: 0,
   },
   {
-    question: "كيف يمكنني عرض المشروع بشكل أولي:",
+    question: ":كيف يمكنني عرض المشروع بشكل أولي",
     options: [
       "قم بإعداد عرض يشمل الأهداف، المتطلبات، والتقدم حتى الآن، احرص على توضيح الفوائد المتوقعة والتحديات المحتملة، و استعد لاستقبال الملاحظات واقتراحات التحسين من الفريق.",
       "قدم المشروع بشكل كامل وانتظر التقييم النهائي.",
@@ -36,12 +36,12 @@ const challenges = [
     correctIndex: 0,
   },
   {
-    question: "ماهي أداة git ؟",
+    question: "ماهي أداة؟ git ",
     options: ["هي اداة لإدارة الأصدارات في البرامج", "هي اداة لتحرير الصور."],
     correctIndex: 0,
   },
   {
-    question: "ماهو github؟",
+    question: " ماهو؟ github  ",
     options: [
       "تخزين سحابي لحفظ المشاريع البرمجية",
       "أداة لإدارة المهام اليومية.",
@@ -70,7 +70,7 @@ const challenges = [
     correctIndex: 0,
   },
   {
-    question: "ماهي المكتبات",
+    question: "ماهي المكتبات؟",
     options: [
       "مكتبات البرمجة هي مجموعات من الأكواد الجاهزة التي توفر وظائف محددة يمكن للمبرمجين استخدامها لإتمام مهام معينة دون الحاجة لكتابة الأكواد من الصفر. تساعد المكتبات في تسريع عملية التطوير وزيادة الكفاءة عبر إعادة استخدام الكود.",
       "هي مجلدات تحتوي على ملفات المشروع فقط.",
@@ -97,26 +97,26 @@ const challenges = [
 
 const ChallengeChat = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [userAnswers, setUserAnswers] = useState({});
-  const [feedback, setFeedback] = useState({});
+  const [userAnswers, setUserAnswers] = useState<any>({});
+  const [feedback, setFeedback] = useState<any>({});
   const [showFeedback, setShowFeedback] = useState(false);
   const [score, setScore] = useState(0);
 
-  const handleOptionChange = (e, index) => {
+  const handleOptionChange = (e:any, index:number) => {
     const { value } = e.target;
     setUserAnswers({ ...userAnswers, [index]: value });
   };
 
-  const handleCheckAnswer = (index) => {
+  const handleCheckAnswer = (index:number) => {
     const userAnswer = parseInt(userAnswers[index]);
     const isCorrect = userAnswer === challenges[index].correctIndex;
     setFeedback({
       ...feedback,
       [index]: isCorrect
-        ? `Good! The correct answer is: ${challenges[index].options[userAnswer]}`
-        : `Good try, but the correct answer is: ${
+        ? `ممتاز! الاجابة الصحيحة:\n\n**${challenges[index].options[userAnswer]}**`
+        : `محاولة جيدة, ولكن الاجابة الصحيحة:\n\n**${
             challenges[index].options[challenges[index].correctIndex]
-          }`,
+          }**`,
     });
     if (isCorrect) setScore(score + 1);
     setShowFeedback(true);
@@ -136,8 +136,8 @@ const ChallengeChat = () => {
 
   const handleShowAnswers = () => {
     setFeedback(
-      challenges.reduce((acc, challenge, index) => {
-        acc[index] = `The correct answer is: ${
+      challenges.reduce((acc:any, challenge, index:any) => {
+        acc[index] = `الاجابة الصحيحة: ${
           challenge.options[challenge.correctIndex]
         }`;
         return acc;
@@ -190,7 +190,7 @@ const ChallengeChat = () => {
             <div>
               <p
                 className={`mt-2 ${
-                  feedback[currentQuestion].includes("Good!")
+                  feedback[currentQuestion].includes("ممتاز!")
                     ? "text-green-600"
                     : "text-red-600"
                 }`}
@@ -219,22 +219,24 @@ const ChallengeChat = () => {
           onClick={handleRestart}
           className="px-4 py-2 text-white bg-red-600 rounded-lg"
         >
-         اعادة ابدأ التحدي
+          اعادة ابدأ التحدي
         </button>
         <button
           onClick={handleShowAnswers}
           className="px-4 py-2 text-white bg-green-600 rounded-lg"
         >
-         عرض الاجابات الصحيحة
+          عرض الاجابات الصحيحة
         </button>
       </div>
       {Object.keys(feedback).length > 0 && (
-        <div className="mt-4 p-4 bg-gray-200 rounded-lg">
-          {Object.keys(feedback).map((key) => (
-            <p key={key} className="text-lg">
-              <span className="font-bold text-right">
-                {challenges[key].question}
-              </span>
+        <div className="mt-4 p-4 rounded-lg text-right">
+          {Object.keys(feedback).map((key:any) => (
+            <p
+              key={key}
+              className="text-lg bg-gray-200 my-6 mt-4 p-4 rounded-lg"
+            >
+              <span className="font-bold text-xl">{challenges[key].question}</span>
+              <br />
               <br />
               {feedback[key]}
             </p>

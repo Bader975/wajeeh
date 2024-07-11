@@ -62,9 +62,8 @@ const Chat = () => {
   }, [text]);
 
   return (
-    <div className="my-20 max-w-[900px] w-full">
-      {/* <ProgressIndicator/> */}
-      <TabsRoot as={Tabs.Root} defaultValue="tab5">
+    <div className="my-40 max-w-[900px] w-full">
+      <TabsRoot as={Tabs.Root} defaultValue="tab1">
         <TabsList as={Tabs.List} aria-label="Manage your account">
           <TabsTrigger as={Tabs.Trigger} value="tab1">
             وجهني
