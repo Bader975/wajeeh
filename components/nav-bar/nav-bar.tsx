@@ -41,7 +41,14 @@ export default function NavBar() {
             <BurgerIcon /> 
               </Button>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content>
+            <DropdownMenu.Content size="2" variant="soft" highContrast style={{
+                width: "150px",  // Adjust width as needed
+                padding: "1rem",  // Adjust padding as needed
+                backgroundColor: "white",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                borderRadius: "0.5rem",
+              }}
+              className="mt-2">
               <DropdownMenu.Item>
                 <Link href={"/"}>الرئيسة</Link>
               </DropdownMenu.Item>

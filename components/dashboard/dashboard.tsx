@@ -95,7 +95,7 @@ export default function Dashboard() {
 
         {/* ----------------------------------- */}
 
-        <div className="flex justify-center gap-8">
+        <div className="flex justify-center gap-8 flex-warp flex-1">
           <div className="flex flex-col justify-center ">
             <h1 className="text-right font-bold text-xl"> تقارير الانجاز</h1>
             <Image
@@ -116,7 +116,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="flex justify-center gap-8">
+        <div className="flex justify-center gap-8 flex-warp flex-1">
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-right font-bold text-xl"> معدلات النمو</h1>
             <Image

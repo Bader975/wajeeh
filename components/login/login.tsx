@@ -119,7 +119,7 @@ export default function Login() {
 <Link href={"/dashboard"}>
               <button
                 type="submit"
-                className="w-full py-2 bg-green-600 font-bold text-white rounded-2xl hover:bg-green-700 transition duration-200"
+                className="w-full mt-10 py-2 bg-green-600 font-bold text-white rounded-2xl hover:bg-green-700 transition duration-200"
                 style={{
                   background:
                     "linear-gradient(to right, #01454F, #13574F, #35764F,#51914F,#6FAD4F,#94CC52)",

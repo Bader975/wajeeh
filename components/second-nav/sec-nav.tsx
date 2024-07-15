@@ -7,11 +7,12 @@ export default function SecondNav() {
     <div
       style={{
         background: "url(/images/nav-bar-bg.png) 0% 0% no-repeat padding-box",
-        height: "40px",
+        minHeight: "40px",
+
       }}
     >
-      <div className="flex justify-center md:justify-between py-3 px-20 flex-wrap items-center">
-        <div className="flex items-center gap-8">
+      <div className="flex justify-center md:justify-between py-2 px-20 flex-wrap items-center space-y-8">
+        <div className="flex items-center gap-8 flex-wrap justify-center">
           <Image
             src="/images/wajeeh-man-icon.png"
             alt=" img"
@@ -30,7 +31,7 @@ export default function SecondNav() {
             dir="rtl"
             size={"3"}
             style={{
-              width: "350px",
+              width: "250px",
               height: "40px",
               borderRadius: "20px",
               background: "white",
