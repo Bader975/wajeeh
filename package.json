@@ -11,6 +11,7 @@
   "dependencies": {
     "@prisma/client": "^5.15.1",
     "@radix-ui/react-checkbox": "^1.1.1",
+    "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-tabs": "^1.1.0",
     "@radix-ui/themes": "^3.1.1",
     "@react-pdf-viewer/core": "^3.12.0",

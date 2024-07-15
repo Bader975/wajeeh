@@ -8,7 +8,7 @@
   color: #0f2837;
   font-size: 18px;
   font-weight: bold;
-  position: relative; /* Ensure positioning context for pseudo-element */
+  position: relative; 
 }
 
 .nav-link:hover {
@@ -26,3 +26,14 @@
   background-color: #7FC042; 
 }
 
+.burger-button {
+  background-color: transparent !important;
+  color:#000;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+/* .burger-button:hover {
+  background-color: #f0f0f0;
+} */
