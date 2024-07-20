@@ -11,7 +11,6 @@ export default function ChatPage() {
           <MainChat />
         </div>
       </div>
-      <Footer />
     </>
   );
 }
