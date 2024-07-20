@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 // import { Noto_Kufi_Arabic } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 import Footer from "@/components/footer/footer";
@@ -25,7 +25,6 @@ import NavBar from "@/components/nav-bar/nav-bar";
 // })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
   title: "وجيه ",
   description:
     " المساعد الافتراضي الأول في عالم التعليم بالتكامل مع مسارات التعلم المرن",
@@ -40,9 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" dir="rtl">
       <body>
-        {/* <body> */}
         <Theme>
-          <NavBar />
           {children}
           <Footer />
         </Theme>
